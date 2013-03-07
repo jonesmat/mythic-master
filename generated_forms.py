@@ -402,6 +402,13 @@ class FormMain ( wx.Frame ):
 
         bSizer17.Add( self.m_btnD100, 0, wx.ALL, 5 )
 
+        bSizer141 = wx.BoxSizer( wx.VERTICAL )
+
+        self.m_textRolls = wx.TextCtrl( self.m_panel1, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,55 ), wx.TE_MULTILINE )
+        bSizer141.Add( self.m_textRolls, 0, wx.ALL|wx.EXPAND, 5 )
+
+        bSizer17.Add( bSizer141, 1, wx.EXPAND, 5 )
+
 
         bSizer5.Add( bSizer17, 0, wx.EXPAND, 5 )
 

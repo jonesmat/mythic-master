@@ -267,23 +267,38 @@ class MythicMasterFormMain(generated_forms.FormMain):
 
         self.m_txtComplex.SetValue(new_value)
 
+    def _roll_die(self, size):
+        roll = str(randint(1, size))
+        new_value = "d%-3d : %2s\r\n" % (size, roll)
+        existing_value = self.m_textRolls.GetValue()
+        new_value += existing_value[0:1000]  # Append the die roll history
+        self.m_textRolls.SetValue(new_value)
+        return roll
+        
     def m_btnD4OnButtonClick(self, event):
-        self.m_btnD4.SetLabel(str(randint(1, 4)))
+        roll = self._roll_die(4)
+        self.m_btnD4.SetLabel(str(roll))
 
     def m_btnD6OnButtonClick(self, event):
-        self.m_btnD6.SetLabel(str(randint(1, 6)))
+        roll = self._roll_die(6)
+        self.m_btnD6.SetLabel(str(roll))
 
     def m_btnD8OnButtonClick(self, event):
-        self.m_btnD8.SetLabel(str(randint(1, 8)))
+        roll = self._roll_die(8)
+        self.m_btnD8.SetLabel(str(roll))
 
     def m_btnD10OnButtonClick(self, event):
-        self.m_btnD10.SetLabel(str(randint(1, 10)))
+        roll = self._roll_die(10)
+        self.m_btnD10.SetLabel(str(roll))
 
     def m_btnD12OnButtonClick(self, event):
-        self.m_btnD12.SetLabel(str(randint(1, 12)))
+        roll = self._roll_die(12)
+        self.m_btnD12.SetLabel(str(roll))
 
     def m_btnD20OnButtonClick(self, event):
-        self.m_btnD20.SetLabel(str(randint(1, 20)))
+        roll = self._roll_die(20)
+        self.m_btnD20.SetLabel(str(roll))
 
     def m_btnD100OnButtonClick(self, event):
-        self.m_btnD100.SetLabel(str(randint(1, 100)))
+        roll = self._roll_die(100)
+        self.m_btnD100.SetLabel(str(roll))
