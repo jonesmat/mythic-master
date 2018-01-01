@@ -1,1 +1,0 @@
-c:\python27\python.exe mythic_master.py
